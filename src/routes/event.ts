@@ -27,6 +27,7 @@ import crypto from "crypto";
 import ical from "ical";
 import { markdownToSanitizedHTML } from "../util/markdown.js";
 import { checkMagicLink, getConfigMiddleware } from "../lib/middleware.js";
+import { generateKeyPairSync } from "node:crypto";
 
 const storage = multer.memoryStorage();
 // Accept only JPEG, GIF or PNG images, up to 10MB
@@ -122,7 +123,20 @@ router.post(
         }
 
         // generate RSA keypair for ActivityPub
-        let { publicKey, privateKey } = generateRSAKeypair();
+
+        const { publicKey, privateKey }  = generateKeyPairSync('rsa', {
+            modulusLength: 4096,
+            publicKeyEncoding: {
+                type: 'spki',
+                format: 'pem',
+            },
+            privateKeyEncoding: {
+                type: 'pkcs8',
+                format: 'pem',
+                cipher: 'aes-256-cbc',
+                passphrase: 'top secret',
+            },
+        });
 
         const event = new Event({
             id: eventID,
