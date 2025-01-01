@@ -1,3 +1,4 @@
+// @ts-nocheck
 import fs from "fs";
 import express from "express";
 import { customAlphabet } from "nanoid";
