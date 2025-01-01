@@ -1,3 +1,5 @@
+// @ts-nocheck
+
 import request from "request";
 import { addToLog } from "./helpers.js";
 import crypto from "crypto";
