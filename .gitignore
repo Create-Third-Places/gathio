@@ -3,7 +3,6 @@
 # gathio custom
 
 config.toml
-dist
 public/events/*
 !public/events/.gitkeep
 

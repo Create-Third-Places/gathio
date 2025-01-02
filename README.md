@@ -3,7 +3,7 @@
 | [![Build status](https://github.com/lowercasename/gathio/actions/workflows/ci.yaml/badge.svg)](https://github.com/lowercasename/gathio/actions/workflows/ci.yaml) | [![Build status](https://github.com/lowercasename/gathio/actions/workflows/deploy.yaml/badge.svg)](https://github.com/lowercasename/gathio/actions/workflows/deploy.yaml) |
 | ---- | ---- |
 
-A simple, federated, privacy-first event hosting platform.
+A fork of the simple, federated, privacy-first event hosting platform.
 
 You can use the flagship publicly hosted version [here](https://gath.io).
 
